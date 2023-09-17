@@ -99,7 +99,6 @@ resource "aws_instance" "realworld_app" {
   subnet_id     = aws_subnet.realworld_subnet_a.id
   availability_zone = "us-west-2a"
   vpc_security_group_ids = [aws_security_group.realworld_app_sg.id]
-  key_name      = "Ansible3"
 
   user_data = <<-EOF
               #!/bin/bash
