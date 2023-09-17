@@ -10,7 +10,7 @@ Description:
 This project automates the setup of the RealWorld application on AWS using Terraform. It will create a VPC, EC2 instances, Load Balancers, Security Groups, and Route53 configurations.
 
 Installation & Usage:
-1. Clone the repository: git clone https://github.com/yourusername/yourrepository.git, cd yourrepository
+1. Clone the repository: git clone https://github.com/Ayo1009/RealWorldApp.git, cd RealWorldApp
 
 2. Configure AWS CLI: Before running the script, make sure to configure your AWS CLI with the necessary credentials. If you haven't done so, run: aws configure
 
