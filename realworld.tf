@@ -1,7 +1,7 @@
 provider "aws" {
   region     = "us-west-2"
-  access_key = "YOUR_AWS_ACCESS_KEY"
-  secret_key = "YOUR_AWS_SECRET_KEY"
+  access_key = var.aws_access_key
+  secret_key = var.aws_secret_key
 }
 
 # VPC Setup
@@ -203,7 +203,7 @@ resource "aws_lb_target_group_attachment" "realworld_backend_attachment" {
 
 # Route53 Domain Setup
 resource "aws_route53_zone" "realworld_domain" {
-  name = "yourdomain.com"
+  name = var.app_domain_name
   comment = "Hosted zone for RealWorld App"
 
   tags = {
@@ -214,7 +214,7 @@ resource "aws_route53_zone" "realworld_domain" {
 # Route53 Record Setup
 resource "aws_route53_record" "realworld_record" {
   zone_id = aws_route53_zone.realworld_domain.zone_id
-  name    = "realworld.yourdomain.com"
+  name    = "realworld.${var.app_domain_name}"
   type    = "A"
 
   alias {
